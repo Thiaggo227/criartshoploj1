@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Criartshop</title>
+</head>
+
+<body>
+    <header>
+        <div class="logoImg">
+            <img src="images/criartshop_logo.png" alt="Criartshop Logo">
+        </div>
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+        
+        <!-- Wrapper dos elementos de navegação para o menu lateral -->
+        <div class="nav-elements" id="navElements">
+
+            <div class="logo-menu-mobile">
+                <img src="images/criartshop_logo.png" alt="Criartshop Logo">
+            </div>
+
+            <ul class="menu">
+                <li><a href="#medalhas">Medalhas</a></li>
+                <li><a href="#trofeus">Troféus</a></li>
+                <li><a href="#placas">Placas</a></li>
+                <li><a href="#">Brindes</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+
+            <div class="busca-container">
+                <input type="text" class="inputBusca" placeholder="Pesquisar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <button class="btnLogin"><i class="bi bi-person-circle"></i> Entrar</button>
+        </div>
+
+        <div class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="carrosselIntro">
+        <img src="images/img_main.png" alt="Troféus e Medalhas de Destaque" class="active">
+        <img src="images/img_main2.png" alt="Premiações Corporativas">
+        <img src="images/img_main.png" alt="Placas de Homenagem">
+        <img src="images/img_main2.png" alt="Qualidade e Acabamento Criartshop">
+
+        <button class="btnOrcamento"> <a href="orcamento.html">Solicitar Orçamento</a></button>
+    </div>
+
+    <!-- Nova Seção de Carrossel Exemplo -->
+<section class="carrosselIntroS carrosselSecundario">
+    <img src="images/img_responsivo1.png" alt="Promoção de Troféus" class="active">
+    <img src="images/img_responsvio2.png" alt="Lançamentos em Acrílico">
+    <img src="images/img_responsivo1.png" alt="Brindes Personalizados">
+    <img src="images/img_responsvio2.png" alt="Brindes Personalizados">
+    
+    <button class="btnOrcamento">
+        <a href="orcamento.html">Solicitar Orçamento</a>
+    </button>
+</section>
+
+    <section class="cardBox">
+        <a href="#" class="cardHero">
+            <div class="cardContent">
+                <div class="cardLeft">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <div class="separator"></div>
+                </div>
+                <span class="cardTitle">ACRÍLICO</span>
+                <i class="fa-solid fa-chevron-right cardArrow"></i>
+            </div>
+            <div class="cardBottomBar"></div>
+        </a>
+
+        <a href="#" class="cardHero">
+            <div class="cardContent">
+                <div class="cardLeft">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <div class="separator"></div>
+                </div>
+                <span class="cardTitle">CORPORATIVO</span>
+                <i class="fa-solid fa-chevron-right cardArrow"></i>
+            </div>
+            <div class="cardBottomBar"></div>
+        </a>
+    
+        <a href="#" class="cardHero">
+            <div class="cardContent">
+                <div class="cardLeft">
+                    <i class="fa-solid fa-clone"></i>
+                    <div class="separator"></div>
+                </div>
+                <span class="cardTitle">ESCUDEIRO</span>
+                <i class="fa-solid fa-chevron-right cardArrow"></i>
+            </div>
+            <div class="cardBottomBar"></div>
+        </a>
+    
+        <a href="#" class="cardHero">
+            <div class="cardContent">
+                <div class="cardLeft">
+                    <i class="fa-solid fa-trophy"></i>
+                    <div class="separator"></div>
+                </div>
+                <span class="cardTitle">TAÇAS</span>
+                <i class="fa-solid fa-chevron-right cardArrow"></i>
+            </div>
+            <div class="cardBottomBar"></div>
+        </a>
+    
+        <a href="#" class="cardHero">
+            <div class="cardContent">
+                <div class="cardLeft">
+                    <i class="fa-solid fa-medal"></i>
+                    <div class="separator"></div>
+                </div>
+                <span class="cardTitle">ZAMAC</span>
+                <i class="fa-solid fa-chevron-right cardArrow"></i>
+            </div>
+            <div class="cardBottomBar"></div>
+        </a>
+    </section>
+
+    <section class="containerMedalha" id="medalhas">
+        <div class="textMedalha">
+            <h1>MEDALHAS <i class="fa-solid fa-medal"></i></h1>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 730</h3>
+            <h1>R$ 3.50</h1>
+            <h4>Diâmetro: 30MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Vitória | 35001</h3>
+            <h1>R$ 4.00</h1>
+            <h4>Diâmetro: 30MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 736</h3>
+            <h1>R$ 4.00</h1>
+            <h4>Diâmetro: 35MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Vitória | 41000</h3>
+            <h1>R$ 5.00</h1>
+            <h4>Diâmetro: 44,5MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="containerMedal">
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 743</h3>
+            <h1>R$ 5.00</h1>
+            <h4>Diâmetro: 43MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | B141</h3>
+            <h1>R$ 5.00</h1>
+            <h4>Diâmetro: 43MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 540</h3>
+            <h1>R$ 5.00</h1>
+            <h4>Diâmetro: 50MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Vitória | 40000</h3>
+            <h1>R$ 6.00</h1>
+            <h4>Diâmetro: 40MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 4600</h3>
+            <h1>R$ 6.50</h1>
+            <h4>Diâmetro: 40MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Vitória | 41000</h3>
+            <h1>R$ 6.00</h1>
+            <h4>Diâmetro: 39MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhe</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 750</h3>
+            <h1>R$ 6.00</h1>
+            <h4>Diâmetro: 50MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+
+        <div class="cardMedalha">
+            <img src="images/medalha_zamac1.png" alt="">
+            <h3>Crespar | 550</h3>
+            <h1>R$ 6.00</h1>
+            <h4>Diâmetro: 50MM</h4>
+            <div class="butons">
+                <button class="detalhes">Ver Detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="containerTrofeu-section" id="trofeus">
+        <div class="textTrofeu">
+            <h1>TROFÉUS <i class="fa-solid fa-trophy"></i></h1>
+        </div>
+
+        <div class="carrosselTrofeu-wrapper">
+            <button class="carrossel-btn btn-prev" aria-label="Anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="carrosselTrofeu">
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Futebol</h3>
+                    <h4>25cm MDF Adesivado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Basquete</h3>
+                    <h4>20cm MDF Adesivado + Base Laca 6+6MM</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Pesca</h3>
+                    <h4>20cm MDF Adesivado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Futebol</h3>
+                    <h4>25cm MDF + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Basquete</h3>
+                    <h4>20cm MDF + Base Laca 6+6MM</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Pesca</h3>
+                    <h4>20cm MDF Adesivado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Futebol</h3>
+                    <h4>25cm MDF + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Basquete</h3>
+                    <h4>20cm MDF + Base Laca 6+6MM</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carrossel-btn btn-next" aria-label="Próximo">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+    
+    <section class="containerTrofeu-sectionA">
+        <div class="carrosselTrofeu-wrapper">
+            <button class="carrossel-btn btn-prev" aria-label="Anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="carrosselTrofeu">
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Truco</h3>
+                    <h4>20cm C/ Impressão UV + Aplique Espelhado + Base Laca 5+2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Basebal</h3>
+                    <h4>25cm Adesivado + Base Laca Pódio 6+6MM</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Escudeiro</h3>
+                    <h4>20cm C/ Impressão UV + Aplique Espelhado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Beach Tennis</h3>
+                    <h4>25cm C/ Impressão UV + Aplique Espelhado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Truco</h3>
+                    <h4>20cm + Impressão UV + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Basebal</h3>
+                    <h4>25cm Adesivado + Base Laca 6+6MM</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Escudeiro</h3>
+                    <h4>20cm C/ Impressão UV + Aplique Espelhado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="cardTrofeu">
+                    <img src="images/basquete.png" alt="Troféu Basquete">
+                    <h3>Troféu Beach Tennis</h3>
+                    <h4>25cm C/ Impressão UV + Aplique Espelhado + Base Laca 2cm</h4>
+                    <div class="butons">
+                        <button class="detalhes">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carrossel-btn btn-next" aria-label="Próximo">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+        <section class="containerPlaca" id="placas">
+            <div class="textPlaca">
+                <h1>PLACA DE HOMENAGEM</h1>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 20x16</h3>
+                <h1>R$ 140.00</h1>
+                <h4>Aço Inox 13x9</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 20x16</h3>
+                <h1>R$ 150.00</h1>
+                <h4>Aço Inox 14x10</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 20x16</h3>
+                <h1>R$ 160.00</h1>
+                <h4>Aço Inox 16x10</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+     
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 24x19</h3>
+                <h1>R$ 200.00</h1>
+                <h4>Aço Inox 18x12</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+    
+        <section class="containerPlaca">
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 24x19</h3>
+                <h1>R$ 200.00</h1>
+                <h4>Aço Inox 18x12</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 28x25</h3>
+                <h1>R$ 215.00</h1>
+                <h4>Aço Inox 20x14</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 30x24</h3>
+                <h1>R$ 290.00</h1>
+                <h4>Aço Inox 24x16</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Cetim 30x24</h3>
+                <h1>R$ 320.00</h1>
+                <h4>Aço Inox 26x18</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="containerPlaca">
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 17x13</h3>
+                <h1>R$ 160.00</h1>
+                <h4>Aço Inox 13x9</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 17x13</h3>
+                <h1>R$ 170.00</h1>
+                <h4>Aço Inox 14x10</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 20x16</h3>
+                <h1>R$ 180.00</h1>
+                <h4>Aço Inox 16x10</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+     
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 20x16</h3>
+                <h1>R$ 220.00</h1>
+                <h4>Aço Inox 18x12</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="containerPlaca">
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 24x18</h3>
+                <h1>R$ 235.00</h1>
+                <h4>Aço Inox 20x14</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 33x23</h3>
+                <h1>R$ 310.00</h1>
+                <h4>Aço Inox 24x16</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+    
+            <div class="cardPlaca">
+                <img src="images/img_placa1.png" alt="">
+                <h3>Estojo de Veludo 33x23</h3>
+                <h1>R$ 330.00</h1>
+                <h4>Aço Inox 26x18</h4>
+                <div class="butons">
+                    <button class="detalhes">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+
+    <section class="containerBio" id="sobre">
+        <div class="cardBio">
+            <img src="images/vitrine1.png" alt="">
+        </div>
+        <h1>A ARTE QUE ENTRA PARA A HISTÓRIA</h1>
+        <p>Com mais de três décadas de história e dedicação, a Cristshop se consolidou como uma verdadeira referência no mercado de premiações, troféus e homenagens. Ao longo de mais de 30 anos de trajetória, a empresa não apenas acompanhou a evolução do setor, mas também ajudou a moldar a forma como conquistas e momentos especiais são celebrados. Seja no pódio das grandes competições ou no palco das homenagens empresariais, a Cristshop continua sendo o símbolo máximo de excelência, elegância e reconhecimento. Premiar é eternizar a dedicação de quem se superou. Há mais de 30 anos, a Cristshop orgulha-se de fazer parte dos momentos mais inesquecíveis da sua jornada.</p>
+    </section>
+
+    <!-- Rodapé Elegante -->
+    <footer class="site-footer" id="contato">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Criartshop</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Rua Paraíba, 280 - Londrina, PR</p>
+                <p><i class="fa-solid fa-phone"></i> (43) 98815-1444</p>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Criartshop. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

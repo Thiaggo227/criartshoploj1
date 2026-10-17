@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f7f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 110px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fundo decorativo vermelho inferior */
+body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: radial-gradient(circle at bottom, #b30000 0%, #800000 100%);
+    border-top-left-radius: 50% 60px;
+    border-top-right-radius: 50% 60px;
+    z-index: -1;
+}
+/* Estilo para opções desabilitadas (cortadas/indisponíveis) */
+.input-wrapper select option:disabled {
+    color: #a0a0a0;
+    text-decoration: line-through;
+    background-color: #f2f2f2;
+}
+
+/* Main & Card */
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1020px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.top-line {
+    width: 45px;
+    height: 4px;
+    background-color: #b30000;
+    margin: 0 auto 30px auto;
+    border-radius: 2px;
+}
+
+/* Header do Card */
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 20px;
+}
+
+.header-left h1 {
+    font-size: 32px;
+    color: #111111;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.header-left h1 span {
+    color: #b30000;
+}
+
+.header-left p {
+    color: #555555;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 280px;
+    text-align: left;
+    border-left: 2px solid #eeeeee;
+    padding-left: 20px;
+}
+
+.trophy-icon {
+    font-size: 36px;
+    color: #b0b0b0;
+    flex-shrink: 0;
+}
+
+.header-right p {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+/* Bloco do Produto */
+.product-item {
+    background: #fafbfc;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.product-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-title-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-number {
+    width: 30px;
+    height: 30px;
+    background-color: #b30000;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-title-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-delete:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Grid de Campos do Formulário */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper i.left-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777777;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.observation-group .input-wrapper i.left-icon {
+    top: 18px;
+    transform: none;
+}
+
+.input-wrapper input, 
+.input-wrapper select, 
+.input-wrapper textarea {
+    width: 100%;
+    padding: 12px 14px 12px 40px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+/* Customização Estilizada do Select */
+.input-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    color: #777777;
+    padding-right: 40px;
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.input-wrapper select:valid {
+    color: #222222;
+    font-weight: 600;
+}
+
+.input-wrapper select:hover,
+.input-wrapper input:hover,
+.input-wrapper textarea:hover {
+    border-color: #b30000;
+    background-color: #fafafa;
+}
+
+.input-wrapper input:focus, 
+.input-wrapper select:focus, 
+.input-wrapper textarea:focus {
+    border-color: #b30000;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(179, 0, 0, 0.12);
+}
+
+.input-wrapper .right-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888888;
+    font-size: 12px;
+    pointer-events: none;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.input-wrapper:focus-within .right-icon {
+    color: #b30000;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Estilo das Opções */
+.input-wrapper select option {
+    color: #333333;
+    padding: 10px;
+    background-color: #ffffff;
+    font-weight: 500;
+}
+
+.input-wrapper select option:disabled {
+    color: #aaaaaa;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+    color: #95a5a6;
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+    min-height: 90px;
+    padding-top: 12px;
+}
+
+/* Ocupa 2 colunas no grid de desktop */
+.observation-group {
+    grid-column: span 2;
+}
+
+/* --- Modal Customizado --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background: #ffffff;
+    width: 90%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(179, 0, 0, 0.1);
+    color: #b30000;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 16px auto;
+}
+
+.modal-card h3 {
+    font-size: 20px;
+    color: #111111;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.modal-card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.modal-card button {
+    width: 100%;
+    padding: 12px;
+    background: #b30000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-card button:hover {
+    background-color: #900000;
+}
+
+.btn-add-product {
+    width: 100%;
+    height: 48px;
+    background: #ffffff;
+    border: 2px dashed #b30000;
+    color: #b30000;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-add-product:hover {
+    background-color: #fff1f1;
+    border-style: solid;
+}
+
+.btn-submit {
+    margin-top: 10px;
+    width: 100%;
+    height: 52px;
+    background: #b30000;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(179, 0, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.btn-submit:hover {
+    background-color: #900000;
+    box-shadow: 0 6px 16px rgba(179, 0, 0, 0.35);
+}
+
+.btn-submit i {
+    font-size: 18px;
+}
+
+/* --- REMOVER SCROLL APENAS EM TELAS MAIORES --- */
+@media (min-width: 901px) {
+    html, body {
+        height: 100vh;
+        overflow: hidden; /* Oculta a barra de rolagem geral em telas grandes */
+        padding-bottom: 20px;
+    }
+}
+
+/* --- Responsividade (Dispositivos Móveis e Tablets) --- */
+@media (max-width: 900px) {
+    .header-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        border-left: none;
+        border-top: 2px solid #eeeeee;
+        padding-left: 0;
+        padding-top: 15px;
+        max-width: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .observation-group {
+        grid-column: span 1;
+    }
+    
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 -8px 25px #00000035;
+        border-radius: 20px 20px 0 0;
+        padding: 16px 20px;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fixed-footer-content {
+        width: 100%;
+        max-width: 1020px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .btn-add-product {
+        width: 100%;
+        height: 48px;
+        background: #ffffff;
+        border: 2px dashed #b30000;
+        color: #b30000;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.25s ease;
+    }
+
+    .btn-add-product:hover {
+        background-color: #fff1f1;
+        border-style: solid;
+    }
+
+    .btn-submit {
+        margin-top: 0;
+        width: 100%;
+        height: 52px;
+        background: #b30000;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 12px rgba(179, 0, 0, 0.25);
+        transition: all 0.25s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #900000;
+        box-shadow: 0 6px 16px rgba(179, 0, 0, 0.35);
+    }
+
+    .btn-submit i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px 10px 130px 10px;
+    }
+
+    .card {
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    .header-left h1 {
+        font-size: 24px;
+    }
+
+    .header-left p {
+        font-size: 15px;
+    }
+
+    .fixed-footer {
+        padding: 10px 14px;
+    }
+
+    .fixed-footer-content {
+        gap: 10px;
+    }
+
+    .btn-add-product span,
+    .btn-submit span {
+        font-size: 16px;
+    }
+}

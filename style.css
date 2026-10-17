@@ -1,0 +1,967 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #ffffff8f; /* Fundo branco semi-transparente */
+    backdrop-filter: blur(12px);                   /* Efeito de desfoque (o "vidro fosco") */
+    -webkit-backdrop-filter: blur(12px);           /* Compatibilidade com o Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);  /* Borda sutil para destacar a bordinha do vidro */
+    box-shadow: 0 8px 32px 0 #00000052;  /* Sombra leve para dar profundidade */
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    z-index: 1000;
+    padding: 13px 25px;
+    box-sizing: border-box;
+}
+/* Estilo do fundo escuro (overlay) atrás do menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000099; /* Cor escura translúcida */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999; /* Fica abaixo do menu, mas acima do conteúdo */
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.logoImg img {
+    height: 38px;
+    width: 110px;
+    object-fit: contain;
+}
+
+.nav-elements {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu {
+    background-color: #b0b0b02e;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+li a {
+    font-family: 'Zalando Sans Expanded', sans-serif;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ba0000;
+    transition: width 0.3s ease;
+}
+
+li a:hover {
+    color: #ba0000;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+.busca-container {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+}
+
+.inputBusca {
+    width: 100%;
+    padding: 8px 38px 8px 12px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    background-color: #f9f9f9;
+    border: 2px solid #2424248a;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.inputBusca:focus {
+    border-color: #ba0000;
+    background-color: #fff;
+    box-shadow: 0 4px 15px #ba000031;
+}
+
+.inputBusca::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.busca-container i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.busca-container i:hover {
+    color: #e0a800;
+}
+
+.btnLogin {
+    background:linear-gradient(135deg, #ff4d6d 0%, #c9184a 50%, #800f2f 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btnLogin:hover {
+    box-shadow: 0 6px 15px #0000004f;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #242424;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1002;
+}
+/* Oculta a logo do menu mobile por padrão em telas grandes */
+.logo-menu-mobile {
+    display: none;
+}
+
+.carrosselIntro {
+    margin-top: 90px;
+    position: relative;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
+}
+
+.carrosselIntro img {
+    padding: 0 20px;
+    border-radius: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.carrosselIntro img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carrosselIntro,
+.carrosselIntroS,
+.carrosselSecundario {
+    margin-top: 90px;
+    position: relative;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
+}
+.carrosselIntroS,
+.carrosselSecundario {
+    display: none; 
+}
+.carrosselIntro img,
+.carrosselIntroS img,
+.carrosselSecundario img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+.carrosselIntro img.active,
+.carrosselIntroS img.active,
+.carrosselSecundario img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.btnOrcamento {
+    position: absolute;
+    z-index: 10;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff4d6d 0%, #c9184a 50%, #800f2f 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 12px 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #0000004d;
+    transition: all 0.3s ease;
+}
+
+.btnOrcamento a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.btnOrcamento:hover {
+    box-shadow: 0 6px 15px #00000097;
+}
+
+.cardBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 15px;
+}
+
+.cardHero {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px #0000000f;
+    width: 270px;
+    padding: 22px 20px;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cardLeft {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cardLeft i {
+    font-size: 22px;
+    color: #0b2545; /* Tom escuro para o ícone */
+}
+
+.separator {
+    width: 1px;
+    height: 26px;
+    background-color: #d1d5db; /* Linha divisória vertical subtil */
+}
+
+.cardTitle {
+    font-family: 'Zalando Sans Expanded', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b2545;
+    letter-spacing: 0.5px;
+}
+
+.cardArrow {
+    font-size: 15px;
+    color: #ba0000; /* Seta azul viva */
+}
+
+.cardBottomBar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background-color: #ba0000; /* Barra azul inferior */
+    border-radius: 4px 4px 0 0;
+}
+
+.containerMedalha{
+    margin-top: 100px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+.containerMedal{
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.containerPlaca {
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.textMedalha,
+.textPlaca {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.containerMedal a,
+.containerMedalha a {
+    grid-column: 1 / -1;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #ba0000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.containerMedal a:hover,
+.containerMedalha a:hover {
+    text-decoration: underline;
+}
+
+.textMedalha h1,
+.textPlaca h1 {
+    font-size: 21px;
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.cardMedalha,
+.cardPlaca {
+    padding: 20px 25px;
+    box-shadow: 0 10px 30px #0000000f;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.cardMedalha:hover,
+.cardPlaca:hover {
+    box-shadow: 0 10px 30px #0000001f;
+    transform: translateY(-3px);
+}
+
+.cardMedalha img,
+.cardPlaca img {
+    height: 120px;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
+    transition: 0.3s;
+}
+
+h4 {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    border-left: 3px solid #ba0000; /* Defina a cor da borda aqui (ex: #666666 ou outra cor de sua preferência) */
+    padding-left: 8px; /* Opcional: dá um respiro entre a borda e o texto */
+}
+
+h3 {
+    font-size: 16px;
+    color: #222;
+}
+
+h1 {
+    font-size: 23px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.butons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.butons .detalhes {
+    background: #fff;
+    color: #ba0000;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.butons .detalhes:hover{
+    border: 2px solid #ba0000;
+}
+
+.containerTrofeu-section {
+    margin-top: 100px;
+    max-width: 1280px;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.containerTrofeu-sectionA {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.textTrofeu {
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.textTrofeu h1 {
+    font-size: 21px;
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.carrosselTrofeu-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carrosselTrofeu {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Mantém a transição suave nativa */
+    scroll-snap-type: x mandatory; /* NOVO: Encaixe automático e suave dos cards */
+    width: 100%;
+    padding: 15px 5px 25px 5px;
+    scrollbar-width: none;
+}
+
+.carrosselTrofeu::-webkit-scrollbar {
+    display: none;
+}
+
+.cardTrofeu {
+    min-width: 280px;
+    max-width: 300px;
+    flex: 0 0 auto;
+    scroll-snap-align: center; /* NOVO: Centraliza/alinha o card suavemente ao rolar */
+    padding: 20px 25px;
+    box-shadow: 0 10px 30px #0000000f;
+    background: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transição de hover mais suave */
+}
+
+.cardTrofeu:hover {
+    box-shadow: 0 10px 30px #0000001f;
+    transform: translateY(-3px);
+}
+
+.cardTrofeu img {
+    height: 230px;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.cardTrofeu h4 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cardTrofeu h3 {
+    margin-top: 10px;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #ba0000;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+.carrossel-btn i{
+    font-size: 23px;
+}
+.btn-prev {
+    left: -30px;
+}
+
+.btn-next {
+    right: -30px;
+}
+/* Estilos do Rodapé (Footer) */
+/* Container principal (opcional, para ajustes gerais) */
+.containerBio {
+    max-width: 1500px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+/* Transforma o cardBio em um container flexível */
+.cardBio {
+    display: flex;
+    align-items: center; /* Alinha o h1 e a imagem verticalmente ao centro */
+    justify-content: space-between; /* Espaça o texto e a imagem */
+    gap: 20px; /* Distância entre o h1 e a imagem */
+    margin-bottom: 20px;
+}
+.containerBio p{
+    font-size: 19px;
+    margin-top: 10px;
+}
+
+/* Controla o tamanho e responsividade da imagem */
+.cardBio img {
+    max-width: 1400px; /* Ajuste a largura máxima conforme necessário */
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+}
+.site-footer {
+    background-color: #111111ea;
+    color: #ffffff;
+    padding: 60px 20px 25px 20px;
+    margin-top: 100px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+    font-family: 'Zalando Sans Expanded', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.footer-info p {
+    font-size: 15px;
+    color: #bbb;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-info p i {
+    color: #ba0000; /* Vermelho padrão da marca */
+    font-size: 18px;
+}
+
+.footer-social h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ba0000;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(186, 0, 0, 0.4);
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Responsividade do Rodapé para telemóveis */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-info p {
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Responsividade Avançada */
+
+@media (max-width: 1024px) {
+
+    .containerMedalha,
+    .containerMedal,
+    .containerPlaca {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        font-size: 22px;
+        display: block;
+    }
+
+    .nav-elements {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 85%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 25px; /* Reduzido levemente de 35px para dar melhor espaçamento */
+        padding: 17px 25px 30px 25px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+    }
+    .logo-menu-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .logo-menu-mobile img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .nav-elements.active {
+        right: 0;
+    }
+
+    .menu {
+        background-color: transparent;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .menu li a {
+        display: block;
+        width: 100%;
+        font-size: 19px;
+        text-decoration: none;       
+        padding-bottom: 8px;
+    }
+
+    .busca-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .btnLogin {
+        padding: 13px 10px;
+        margin-top: 0; /* Ajustado para alinhar corretamente */
+        width: 100%;
+        text-align: center;
+    }
+
+    .busca-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .btnLogin {
+        padding: 13px 10px;
+        margin-top: -22px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 17px 25px;
+        box-shadow: none;
+        border-bottom: 2px solid #0000001f;
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        right: 0;
+        left: 0;
+        border-radius: 0;
+    }
+
+    .logoImg img {
+        height: 35px;
+    }
+
+    .carrosselIntro {
+       display: none;
+    }
+
+    .carrosselIntro img {
+       display: none;
+    }
+
+    .carrosselIntroS,
+    .carrosselSecundario {
+        display: flex !important;
+        margin-top: 75px;
+        height: 470px; 
+    }
+
+    .btnOrcamento {
+        width: 80%;
+        bottom: 25px;
+        padding: 12px 20px;
+        box-shadow: 0 4px 10px #000000b2;
+    }
+    .btnOrcamento a{
+        font-size: 17px;
+    }
+
+    .cardHero {
+        width: 100%;
+    }
+
+    .cardHero a {
+        font-size: 17px;
+    }
+
+    .cardTrofeu {
+        min-width: 220px;
+        scroll-snap-align: start;
+    }
+
+    .textMedalha h1,
+    .textTrofeu h1,
+    .textPlaca h1 {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .carrosselIntro {
+       display: none;
+    }
+
+    .carrosselIntro img {
+      display: none;
+    }
+
+    .containerMedalha{
+        margin-top: 80px;
+    }
+    .containerMedalha,
+    .containerMedal,
+    .containerPlaca {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .cardMedalha,
+    .cardPlaca {
+        box-shadow: none;
+        border: 2px solid #24242435;
+        padding: 12px;
+        transition: 0.3s;
+    }
+    .cardMedalha:hover,
+    .cardPlaca:hover,
+    .cardTitle:hover{
+        border: 2px solid #9400008b;
+    }
+    .cardTrofeu {
+        box-shadow: none;
+        border: 2px solid #24242435;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        transition: 0.3s;
+    }
+
+    .cardMedalha img,
+    .cardPlaca img {
+        height: 110px;
+    }
+
+    .cardMedalha h3,
+    .cardPlaca h3 {
+        font-size: 17px;
+    }
+
+    .cardMedalha h4,
+    .cardPlaca h4 {
+        font-size: 13px;
+    }
+
+    .cardMedalha h1,
+    .cardPlaca h1 {
+        font-size: 16px;
+    }
+
+    .butons .detalhes{
+        font-size: 15px;
+    }
+
+    .cardTrofeu img {
+        height: 200px;
+        width: 100%;
+    }
+
+    .carrossel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .btn-prev {
+        left: 5px;
+    }
+
+    .btn-next {
+        right: 5px;
+    }
+}
